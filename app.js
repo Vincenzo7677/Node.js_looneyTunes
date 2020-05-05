@@ -1,5 +1,5 @@
 const express = require('express')
-const people = require('./people.json')
+const profiles = require('./profiles.json')
 // const home = require('./routes/index')
 const app = express()
 // const pug = require('pug')
@@ -13,19 +13,19 @@ app.use(express.static(__dirname + '/public'))
 app.get('/', (req,res) => {
     res.render("index", {
         title: "Looney Tunes",
-        people: people.profiles
+        profiles: profiles.profiles
     })
 })
 
 app.get('/profile', (req, res) => {
-    const person = people.profiles.find(p => p.id === req.query.id);
+    const figure = profiles.profiles.find(p => p.id === req.query.id);
     res.render('profile', {
-      title: `About ${person.firstname} ${person.lastname}`,
-      person,
+      title: `About ${figure.firstname} ${figure.lastname}`,
+      figure,
     });
   });
 
 
 
-const port = process.env.PORT || 3000
-app.listen(port), () => console.log("Server is on port 3000...")
+
+app.listen(3000)

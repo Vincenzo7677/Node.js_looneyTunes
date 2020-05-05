@@ -4,14 +4,14 @@ block header
 
 block content
   div.profile
-    div.profile-image(style=`background: url('/images/${person.imgSrc}') top center
+    div.profile-image(style=`background: url('/images/${figure.imgSrc}') top center
     no-repeat; background-size: cover;`)
     div.profile-details
       h1.profile-name
-        | #{person.firstname} #{person.lastname}
+        | #{figure.firstname} #{figure.lastname}
       h2.profile-tagline
-        | #{person.tagline}
+        | #{figure.tagline}
       p.profile-bio
-        | #{person.bio}
-      a.button.button-twitter(href=`${person.twitter}`)
+        | #{figure.bio}
+      a.button.button-link(href=`${figure.link}`)
         | Check my Profile
